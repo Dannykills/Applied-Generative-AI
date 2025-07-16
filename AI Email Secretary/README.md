@@ -1,18 +1,20 @@
-# AI Email Secretary
+# ✉️ AI Email Secretary
 
-This project uses OpenAI's language models to transform meeting notes into professional email drafts.
+This tool uses OpenAI's language models to help you manage your inbox by summarizing yesterday’s emails and drafting thoughtful replies to the most important ones. It’s like a personal assistant for your daily email catch-up — especially useful after a busy day or long weekend.
 
-## 📂 Project Structure
+## 📁 What’s in This Folder
 
-- `AI_Email_Secretary.ipynb` — The main notebook that processes notes and generates emails.
-- `Alex_emails_march_04.csv` — A dataset of sample meeting notes.
-- `config_template.json` — A config file where you can add your OpenAI API key (do not share sensitive keys publicly).
+- `AI_Email_Secretary.ipynb` — The main notebook that runs the whole email assistant workflow.
+- `Alex_emails_march_04.csv` — A sample inbox dataset with emails from the previous day.
+- `config_template.json` — A blank config where you can insert your OpenAI API key and base URL.
 
-## 💡 Features
+## 💡 What It Actually Does
 
-- Summarizes long meeting notes into short, professional summaries.
-- Drafts email content using generative AI.
-- Accepts structured and unstructured input text.
+- Loads a CSV of emails received the previous day (you can replace it with your own).
+- Extracts high-level summaries of each email using GPT.
+- Ranks messages based on urgency and importance.
+- Drafts AI-generated responses to the top few emails (based on your chosen limit).
+- Offers easy access to both subject line suggestions and full reply drafts.
 
 ## 🛠 Requirements
 
@@ -38,6 +40,8 @@ Use the `config_template.json` file to insert your own OpenAI API credentials. R
 
 ## 🚀 How to Run
 
-1. Open the Jupyter Notebook.
-2. Load your meeting notes or use the provided dataset.
-3. Run the cells to generate email drafts.
+1. Open the notebook in Jupyter or Google Colab.
+2. Make sure your config_template.json is filled out and accessible.
+3. Upload your inbox CSV or use the sample provided.
+4. Run each cell — the notebook will process the emails, rank them, and draft responses.
+5. Read, copy, or save the suggested replies however you like.
