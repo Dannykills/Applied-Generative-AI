@@ -4,10 +4,13 @@ This tool uses large language models (LLMs) to help researchers align their past
 
 ## 📁 What’s in This Folder
 
-- `NOFO_Proposal_Assistant.ipynb` — Main notebook that runs the assistant workflow.
-- `sample_NOFO.pdf` — A sample Notice of Funding Opportunity from the National Institute of Mental Health.
-- `ian_publications.txt` — Example text from Dr. Ian McCulloh’s past research portfolio.
-- `config_template.json` — A blank config file where you can enter your OpenAI API key and settings.
+- `Research Proposal Automation Tool.ipynb` — Main Jupyter Notebook for the assistant.
+- `config_template.json` — Fill this in with your OpenAI API key and base URL.
+- `NOFO.pdf` — A sample Notice of Funding Opportunity (NIMH).
+- `Research Proposal Template.pdf` — A guide to NIH formatting and content structure.
+- `ResearchPapers/` — Example past publications to simulate archive matching.
+- `For Reference - Generated Sample Research Proposals/` — Example generated proposal outputs.
+- `README.md` — This file.
 
 ## 💡 What It Actually Does
 
@@ -20,15 +23,24 @@ This tool uses large language models (LLMs) to help researchers align their past
 ## 🛠 Requirements
 
 - Python 3.x  
-- `openai`, `langchain`, `faiss-cpu`, `PyMuPDF` or `pdfminer.six`
+- Jupyter Notebook or Google Colab
 
-Install dependencies:
+Install dependencies (Colab/Jupyter):
+
 ```bash
-pip install openai langchain faiss-cpu pymupdf
+pip install langchain huggingface-hub openai chromadb langchain-community langchain-openai \
+lark rank_bm25 numpy scipy scikit-learn transformers pypdf markdown-pdf tiktoken sentence-transformers
+```
+
+If using a GPU, install PyTorch (adjust for your CUDA version if needed):
+
+```bash
+pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cu124
+```
 
 ## 🔒 API Config
 
-Use the `config_template.json` file to insert your own OpenAI API credentials. Replace the placeholder string with your actual key (do **not** share the real key in public repos).
+Use the `config_template.json` file to insert your own OpenAI API credentials. Replace the placeholder string with your actual key.
 
 ```json
 {
